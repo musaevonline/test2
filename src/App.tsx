@@ -1,25 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import HTMLTable from './pages/HTMLTable'
+import HTMLTableWithCell from './pages/HTMLTableWithCell'
+import HTMLNestedTable from './pages/HTMLNestedTable'
+import MuiNestedTable from './pages/MuiNestedTable'
+import MuiVirtualNestedTable from './pages/MuiVirtualNestedTable'
+
+import Main from './pages/Main';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route index element={<Main />} />
+      <Route path='/html-table' element={<HTMLTable />} />
+      <Route path='/html-table-with-cell' element={<HTMLTableWithCell />} />
+      <Route path='/html-nested-table' element={<HTMLNestedTable />} />
+      <Route path='/mui-nested-table' element={<MuiNestedTable />} />
+      <Route path='/mui-virtual-nested-table' element={<MuiVirtualNestedTable />} />
+    </Routes>
   );
 }
 
